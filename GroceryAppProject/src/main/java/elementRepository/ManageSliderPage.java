@@ -14,7 +14,6 @@ public class ManageSliderPage  {
 		WebDriver driver;
 		GeneralUtilities gu=new GeneralUtilities();
 		
-		//String path="";
 		public ManageSliderPage(WebDriver driver) {
 			
 				this.driver=driver;

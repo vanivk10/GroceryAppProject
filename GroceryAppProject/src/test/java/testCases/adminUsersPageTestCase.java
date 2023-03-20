@@ -10,13 +10,14 @@ import constant.Constant;
 import elementRepository.AdminPage;
 import elementRepository.AdminUsersPage;
 import elementRepository.GLoginPage;
+import utilities.RetryUtils;
 
 public class adminUsersPageTestCase extends BaseClass {
 	AdminPage ap;
 	GLoginPage gp;
 	AdminUsersPage user;
 
-	@Test
+	@Test(retryAnalyzer = RetryUtils.class,groups = "critical")
 	public void verifyTheAdminIsAbleToCreateANewUserTypeStaff() {
 
 		ap = new AdminPage(driver);

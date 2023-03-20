@@ -13,7 +13,7 @@ public class ManageOrdersPage {
 
 		WebDriver driver;
 		GeneralUtilities gu=new GeneralUtilities();
-		String locator=null;
+		
 		
 		public ManageOrdersPage(WebDriver driver) {
 			

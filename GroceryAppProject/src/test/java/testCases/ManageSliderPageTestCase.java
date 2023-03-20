@@ -12,6 +12,7 @@ import elementRepository.AdminPage;
 import elementRepository.GLoginPage;
 
 import elementRepository.ManageSliderPage;
+import utilities.RetryUtils;
 
 public class ManageSliderPageTestCase extends BaseClass {
 	GLoginPage gp;
@@ -19,8 +20,7 @@ public class ManageSliderPageTestCase extends BaseClass {
 	ManageSliderPage slider;
 
 	@Test(groups = { "critical" })
-
-	public void verifyBackgroundColorOfResetButtonInListSliderPage() {
+    public void verifyBackgroundColorOfResetButtonInListSliderPage() {
 
 		slider = new ManageSliderPage(driver);
 		gp = new GLoginPage(driver);
@@ -51,7 +51,7 @@ public class ManageSliderPageTestCase extends BaseClass {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryUtils.class,groups = "critical")
 	public void verifyAlertMessageIsShownWhenFileUplaodedSuccessfullyInAddSliderPage() throws AWTException {
 
 		slider = new ManageSliderPage(driver);

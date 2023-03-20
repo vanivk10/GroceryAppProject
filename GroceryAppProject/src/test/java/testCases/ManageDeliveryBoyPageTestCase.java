@@ -10,6 +10,7 @@ import elementRepository.AdminPage;
 import elementRepository.GLoginPage;
 import elementRepository.ManageDeliveryBoyPage;
 import utilities.ExcelReadUtility;
+import utilities.RetryUtils;
 
 public class ManageDeliveryBoyPageTestCase extends BaseClass {
 
@@ -17,7 +18,7 @@ public class ManageDeliveryBoyPageTestCase extends BaseClass {
 	GLoginPage gp;
 	ManageDeliveryBoyPage deliveryby;
 
-	@Test
+	@Test(retryAnalyzer = RetryUtils.class,groups = "critical")
 	public void verifyingAdminAbleToAddNewDeliveryBoyDetailsWhileClickingNewButtonInManageDeliveryBoyPage()
 			throws IOException {
 

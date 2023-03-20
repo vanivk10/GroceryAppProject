@@ -5,6 +5,7 @@ import org.testng.asserts.Assertion;
 import constant.Constant;
 import elementRepository.GLoginPage;
 import utilities.DataProviderUtility;
+import utilities.RetryUtils;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -29,7 +30,7 @@ public class GLoginPageTestCase extends BaseClass {// inheritance
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryUtils.class,groups = "critical")
 	public void verifyLoginwithInvalidCredentials() throws IOException {
 
 		gp = new GLoginPage(driver);
