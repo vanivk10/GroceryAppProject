@@ -1,0 +1,20 @@
+<suite name="My Test Suite">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtility" />
+	</listeners>
+	<test name="My Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="testCases.AdminPageTestCase"></class>
+			<class name="testCases.adminUsersPageTestCase"></class>
+			<class name="testCases.GLoginPageTestCase"></class>
+			<class name="testCases.ManageDeliveryBoyPageTestCase"></class>
+			<class name="testCases.ManageLocationPageTestCase"></class>
+			<class name="testCases.ManageOfferCodePageTestCase"></class>
+			<class name="testCases.ManageOrdersPageTestCase"></class>
+			<class name="testCases.ManageProductTestCase"></class>
+			<class name="testCases.ManageSliderPageTestCase"></class>
+			<class name="testCases.ManageUserTestCase"></class>
+		</classes>
+	</test>
+</suite>

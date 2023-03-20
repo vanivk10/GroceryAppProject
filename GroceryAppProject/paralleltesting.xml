@@ -1,0 +1,21 @@
+<suite name="MyTestSuite" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtility" />
+	</listeners>
+	<test name="SmokeTest">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="testCases.AdminPageTestCase"></class>
+			<class name="testCases.GLoginPageTestCase"></class>
+			<class name="testCases.ManageUserTestCase"></class>
+		</classes>
+	</test>
+	<test name="SanityTest">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="testCases.ManageOrdersPageTestCase"></class>
+			<class name="testCases.ManageLocationPageTestCase"></class>
+			<class name="testCases.ManageOfferCodePageTestCase"></class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,18 @@
+<suite name="MyTestSuite">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtility" />
+	</listeners>
+	<test name="MyTestForGroceryApplication">
+		<parameter name="browser" value="chrome"></parameter>
+		<groups>
+			<run>
+				<include name="critical"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="testCases.AdminPageTestCase"></class>
+			<class name="testCases.GLoginPageTestCase"></class>
+			<class name="testCases.ManageUserTestCase"></class>
+		</classes>
+	</test>
+</suite>
