@@ -25,8 +25,7 @@ public class Constant {
 	public static final String EXPECTEDSELECTEDVALUEFROMTHEDROPDOWNPAYMNETMODE="COD";
 	public static final String TESTUSERNAME="Nila";
 	public static final String TESTPASSWORD="user123";
-	public static final String EXPECTEDALERTINADMINUSERSPAGE="×\n"
-			+ "Alert!\n"
+	public static final String EXPECTEDALERTINADMINUSERSPAGE="Alert!\n"
 			+ "User Created Successfully";
 			
 	public static final String SELECTEDUSERTYPE="Staff";

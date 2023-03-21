@@ -59,7 +59,7 @@ public class GLoginPageTestCase extends BaseClass {// inheritance
 		Assert.assertEquals(actualresult, expectedresult, Constant.COMMONERRORMESSAGE);
 	}
 
-	@Test
+	@Test(groups = { "Regression" })
 	public void VerifyingRememberMeCheckBoxIsUnselectedInSignIn() {
 		gp = new GLoginPage(driver);
 		boolean actualResult = gp.checkRememberMe();
@@ -67,7 +67,7 @@ public class GLoginPageTestCase extends BaseClass {// inheritance
 		Assert.assertEquals(actualResult, expectedResult, Constant.REMEMBERMECHECKBOXERRORMESSAGE);
 	}
 
-	@Test
+	@Test(groups = { "Smoke" })
 	public void verifyingCurrentUrlOfTheSignInPage() {
 
 		gp = new GLoginPage(driver);

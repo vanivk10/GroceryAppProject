@@ -26,7 +26,7 @@ public class AdminPageTestCase extends BaseClass {
 
 	}
 
-	@Test
+	@Test(groups = { "Smoke" })
 	public void verifyingPageTiTleOfAdminHomePage() {
 
 		gp = new GLoginPage(driver);
@@ -40,7 +40,7 @@ public class AdminPageTestCase extends BaseClass {
 
 	}
 
-	@Test
+	@Test(groups = { "Sanity" })
 	public void verifyingAdminCanAccessableManageOrdersPage() {
 
 		gp = new GLoginPage(driver);
@@ -55,7 +55,7 @@ public class AdminPageTestCase extends BaseClass {
 
 	}
 
-	@Test
+	@Test(groups = { "Sanity" })
 	public void verifyAdminIsAbleToAccessManageLocationPage() {
 		gp = new GLoginPage(driver);
 		ap = new AdminPage(driver);

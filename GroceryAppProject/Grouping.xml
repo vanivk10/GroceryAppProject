@@ -7,6 +7,10 @@
 		<groups>
 			<run>
 				<include name="critical"></include>
+				<include name="Sanity"></include>
+				<include name="Regression"></include>
+				<include name="Smoke"></include>
+				
 			</run>
 		</groups>
 		<classes>

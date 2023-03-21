@@ -35,7 +35,7 @@ public class ManageUserTestCase extends BaseClass {
 
 	}
 
-	@Test
+	@Test(groups = { "Sanity" })
 	public void verifyAdminisAbleToSelectTheStatusFromTheStatusDropDown() {
 
 		gp = new GLoginPage(driver);
@@ -52,7 +52,7 @@ public class ManageUserTestCase extends BaseClass {
 
 	}
 
-	@Test
+	@Test(groups = { "Regression" })
 	public void verifyAdminIsAbleToSearchTheUserByPhoneNumber() {
 
 		gp = new GLoginPage(driver);
