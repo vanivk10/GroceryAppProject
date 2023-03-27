@@ -28,8 +28,8 @@ public class adminUsersPageTestCase extends BaseClass {
 		gp.clickSignInButton();
 		ap.clickOnAdminUser();
 		user.clickOnNewButton();
-		user.enterUserName(Constant.TESTUSERNAME);
-		user.enterPassword(Constant.TESTPASSWORD);
+		user.enterUserName(faker.name().username());
+		user.enterPassword(faker.internet().password());
 		user.selectUserTypeFromDropDown();
 		user.clickSaveButton();
 		boolean actualResult = user.getErrorMessage(Constant.EXPECTEDALERTINADMINUSERSPAGE);

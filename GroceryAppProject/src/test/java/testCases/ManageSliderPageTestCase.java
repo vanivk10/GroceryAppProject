@@ -52,7 +52,7 @@ public class ManageSliderPageTestCase extends BaseClass {
 	}
 
 	@Test(retryAnalyzer = RetryUtils.class,groups = "critical")
-	public void verifyAlertMessageIsShownWhenFileUplaodedSuccessfullyInAddSliderPage() throws AWTException {
+	public void verifyAlertMessageIsShownWhenFileUplaodedSuccessfullyInAddSliderPage(){
 
 		slider = new ManageSliderPage(driver);
 		gp = new GLoginPage(driver);

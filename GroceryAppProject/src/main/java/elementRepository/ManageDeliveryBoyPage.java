@@ -14,8 +14,6 @@ public class ManageDeliveryBoyPage {
 
 	WebDriver driver;
 	GeneralUtilities gu = new GeneralUtilities();
-	RandomDataGeneratorUtility data = new RandomDataGeneratorUtility();
-	// WebDriverwait wait=new WebDriverWait(driver);
 
 	public ManageDeliveryBoyPage(WebDriver driver) {
 
@@ -74,50 +72,60 @@ public class ManageDeliveryBoyPage {
 	}
 
 	public void enterName(String na) {
-		nam.sendKeys(na);
+
+		gu.enterText(na, nam);
 
 	}
 
 	public void enterPhoneNumber(String no) {
-		phonenumber.sendKeys(no);
 
+		gu.enterText(no, phonenumber);
 	}
 
 	public void enterEmailId(String eid) {
-		emailId.sendKeys(eid);
+
+		gu.enterText(eid, emailId);
 
 	}
 
 	public void enterAddress(String adr) {
-		addresss.sendKeys(adr);
+
+		gu.enterText(adr, addresss);
 
 	}
 
 	public void enterUserName(String user) {
 
-		String randomString = data.randomPassword();
-		newUsername.sendKeys(user + randomString);
+		gu.enterUserNameWithRandomNumber(user, newUsername);
 
 	}
 
 	public void eneterPassWord(String pass) {
-		newPassword.sendKeys(pass);
+
+		gu.enterText(pass, newPassword);
 	}
 
 	public void clickOnNewBtn() {
-		newBtn.click();
+
+		gu.clickOnWebElement(newBtn);
+
 	}
 
 	public void clickOnSearchBtn() {
-		searchBtn.click();
+
+		gu.clickOnWebElement(searchBtn);
+
 	}
 
 	public void clickOnResetBtn() {
-		resetBtn.click();
+
+		gu.clickOnWebElement(resetBtn);
+
 	}
 
 	public void clickOnCancelBtn() {
-		cancelBtn.clear();
+
+		gu.clickOnWebElement(cancelBtn);
 
 	}
 

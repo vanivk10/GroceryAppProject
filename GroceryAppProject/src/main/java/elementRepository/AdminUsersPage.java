@@ -14,9 +14,8 @@ import utilities.RandomDataGeneratorUtility;
 	public class AdminUsersPage {
 		WebDriver driver;
 		GeneralUtilities gu=new GeneralUtilities();
-		RandomDataGeneratorUtility data=new RandomDataGeneratorUtility();
 		
-		public AdminUsersPage(WebDriver driver) {
+			public AdminUsersPage(WebDriver driver) {
 			this.driver=driver;
 			PageFactory.initElements(driver, this);
 		}
@@ -43,22 +42,23 @@ import utilities.RandomDataGeneratorUtility;
 		}
 
 		public void clickOnNewButton() {
-			newButton.click();
+			gu.clickOnWebElement(newButton);
 		}
 		public void enterUserName(String user) {
-			String randomString=data.randomPassword();
-			username.sendKeys(user+randomString);
+			
+			gu.enterUserNameWithRandomNumber(user, username);
 			
 		}
 		public void enterPassword(String paswd) {
-			password.sendKeys(paswd);
+			
+			gu.enterText(paswd, password);
 		}
 		public String selectUserTypeFromDropDown() {
 			return gu.dropDownIsSelected(useType);
 		}
 		public void clickSaveButton() {
 			
-			saveButton.click();
+			gu.clickOnWebElement(saveButton);
 		}
 		
 	}

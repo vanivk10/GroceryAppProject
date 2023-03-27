@@ -5,7 +5,6 @@ public class Constant {
 	public static final String COMMONALERTMESSAGE="Expected result not matched";
 	public static final String REMEMBERMECHECKBOXERRORMESSAGE="RememberMe checkBox is Selected";
 	public static final String COMMONERRORMESSAGE="Expected Result is not matched";
-	public static final String INVALIDUSERNAME="sampleusername";
 	public static final String LOGINPASSWORD="admin";
 	public static final String LOGINUSERNAME="admin";
 	public static final String TITLE="title";
@@ -23,11 +22,9 @@ public class Constant {
 	public static final String EXPECTEDRESULTSELECTEDSTATEINADDLOCATIONPAGE="Aberdeen";
 	public static final String EXPECTEDBACKGROUNDCOLOUROFSEARCHBUTTONINLISTLOCATION="rgba(0, 123, 255, 1)";
 	public static final String EXPECTEDSELECTEDVALUEFROMTHEDROPDOWNPAYMNETMODE="COD";
-	public static final String TESTUSERNAME="Nila";
-	public static final String TESTPASSWORD="user123";
+	
 	public static final String EXPECTEDALERTINADMINUSERSPAGE="Alert!\n"
 			+ "User Created Successfully";
-			
 	public static final String SELECTEDUSERTYPE="Staff";
 	public static final String EXPECTEDURLOFADMINPAGE="https://groceryapp.uniqassosiates.com/admin/login";
 	public static final String ADMINHOMEPAGETITLE="Dashboard | 7rmart supermarket";
@@ -46,7 +43,6 @@ public class Constant {
 	public static final String COMMONERRORMESSAGEOFURL="URL IS NOT MATCHED";
 	public static final String EXPECTEDBGCOLORSIGNINBTN="rgba(52, 58, 64, 1)";
 	public static final String EXPECTEDINVALIDLOGINALERT="×\n" + "Alert!\n" + "Invalid Username/Password";
-	
 	public static final String EXPECTEDVALUEFROMDROPDOWNGROUP="discount";
 	public static final String EXPECTEDTOOLTIPVALUES="Style";
 	public static final String EXPECTEDALERTMESSAGEOFDELIVERYBOYDETAILS="Alert!\n"+"Delivery Boy Details Created Successfully";
@@ -60,12 +56,11 @@ public class Constant {
 	public static final String CHROMEBROWSER="chrome";
 	public static final String EDGEBROWSER="edge";
 	public static final String CONFIGPROPERTIESFILEPATH="\\src\\main\\resources\\Config.properties";
-	public static final String DELIVERYBOYNAME="Karthik";
 	public static final String DELIVERYBOYEID="abc@gmail.com";
-	public static final String DELIVERYBOYNUMBER="2147483647";
-	public static final String DELIVERYBOYADDRESS="Karthik";
-	public static final String DELIVERYBOYUNAME="Karthik";
-	public static final String DELIVERYBOYPASWD="Karthik";
+	
+	
+	
+	
 	  	
 	
 	

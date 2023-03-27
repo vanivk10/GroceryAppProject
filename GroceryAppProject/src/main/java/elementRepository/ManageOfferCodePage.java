@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import utilities.GeneralUtilities;
 
 public class ManageOfferCodePage {
@@ -64,26 +65,31 @@ public class ManageOfferCodePage {
 		
 	}
 	public void clickOnNewBtn() {
-		newBtn.click();
+		
+		gu.clickOnWebElement(newBtn);
 	}
 	
 	public void clickOnSearchBtn() {
-		searchBtn.click();
+		
+		gu.clickOnWebElement(searchBtn);
 	}
 	public void clickOnResetBtn() {
-		resetBtn.click();
+		
+		gu.clickOnWebElement(resetBtn);
 	}
 	
 	public void enterOfferCode(String code) {
-		offercode.sendKeys(code);
+		
+		gu.enterText(code, offercode);
 		
 	}
 	public void enterPercentage(String p) {
-		percentage.sendKeys(p);
+		gu.enterText(p, percentage);
 		
 	}
 	public void enterAmount(String amnt) {
-		amount.sendKeys(amnt);
+	
+		gu.enterText(amnt, amount);
 		
 	}
 	
@@ -98,8 +104,9 @@ public class ManageOfferCodePage {
 		return gu.radioButtonIsSelected(radioBtn2);
 
 	}
-	public void FileUpload() throws AWTException {
+	public void FileUpload(){
 		gu.fileUploads(driver,chooseFile, System.getProperty("user.dir")+"\\src\\main\\resources\\UploadFiles\\offer.jpg");
+		
 	}
 	
 	public boolean getErrorMessage(String text) {

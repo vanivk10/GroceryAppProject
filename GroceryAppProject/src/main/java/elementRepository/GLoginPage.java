@@ -10,83 +10,71 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-
 import utilities.GeneralUtilities;
 
 public class GLoginPage {
 
 	WebDriver driver;
-	GeneralUtilities gu=new GeneralUtilities();
-	
+	GeneralUtilities gu = new GeneralUtilities();
+
 	public GLoginPage(WebDriver driver) {
-		
-			this.driver=driver;
-			PageFactory.initElements(driver, this);
+
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//input[@type='text']")
+
+	@FindBy(xpath = "//input[@type='text']")
 	WebElement UserName;
-	
-	@FindBy(xpath="//input[@type='password']")
+
+	@FindBy(xpath = "//input[@type='password']")
 	WebElement PassWord;
-	
-	//@FindBy(id="remember")
-	//WebElement rememberMe;
-	
-	@FindBy(xpath=" //input[@type='checkbox']")
+
+	@FindBy(xpath = " //input[@type='checkbox']")
 	WebElement checkbox;
-	
-	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
+
+	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	WebElement loginAlertMsg;
-	
-	@FindBy(xpath="//button[@type='submit']")
+
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement SignInButton;
-	
-	/*public boolean presenceofSignInButton() {
-		String presence=SignInButton.isDisplayed();
-		return presence;
-	}*/
-	
+
 	public void enterUserName(String user) {
-		UserName.sendKeys(user);
-		
+
+		gu.enterText(user, UserName);
+
 	}
-	
+
 	public void eneterPassWord(String pass) {
-		PassWord.sendKeys(pass);
+
+		gu.enterText(pass, PassWord);
 	}
-	
+
 	public void clickSignInButton() {
-		
-		SignInButton.click();
-	
+
+		gu.clickOnWebElement(SignInButton);
+
 	}
-	
+
 	public boolean getErrorMessage(String text) {
-		boolean actual=gu.getexpectedResultAlert(loginAlertMsg, text);
+		boolean actual = gu.getexpectedResultAlert(loginAlertMsg, text);
 		return text.contains(text);
 	}
-	
 
 	public boolean checkRememberMe() {
-		
-		
+
 		return gu.checkBoxIsSelected(checkbox);
 	}
-	
-	
-		
+
 	public String SignInButtonColour() {
-		
-		String c=SignInButton.getCssValue("background-color");
+
+		String c = SignInButton.getCssValue("background-color");
 		return c;
-		
+
 	}
-	
-    public String getTextOfSignInButton() {
-		
-	 return gu.getElementText(SignInButton);//calling general utility function for getelementtext();
+
+	public String getTextOfSignInButton() {
+
+		return gu.getElementText(SignInButton);// calling general utility function for getelementtext();
 	}
-	
- 
+
 }

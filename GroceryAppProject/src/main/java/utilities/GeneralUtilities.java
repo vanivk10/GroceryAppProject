@@ -13,8 +13,25 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class GeneralUtilities {
+	RandomDataGeneratorUtility data=new RandomDataGeneratorUtility();
 	Select obj;
+	Robot obj1;
+	
+	
+	public void enterUserNameWithRandomNumber(String user,WebElement element) {
+		String randomString=data.randomPassword();
+		element.sendKeys(user+randomString);
+		
+	}
 
+	public void enterText(String str,WebElement element) {
+		element.sendKeys(str);
+	}
+	
+	public void clickOnWebElement(WebElement element){
+		element.click();
+	}
+	
 	public boolean getexpectedResultAlert(WebElement element,String text) {
 		String alert=element.getText();
 		return alert.contains(text);
@@ -75,21 +92,26 @@ public class GeneralUtilities {
 
 	}
 
-	public void fileUploads(WebDriver driver, WebElement element, String filePath) throws AWTException {
+	public void fileUploads(WebDriver driver, WebElement element, String filePath){
 
-		Robot obj = new Robot();
+		try {
+			obj1 = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Actions mouse = new Actions(driver);
 		mouse.moveToElement(element).click().perform();
 		StringSelection ss = new StringSelection(filePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		obj.keyPress(KeyEvent.VK_CONTROL);
-		obj.keyPress(KeyEvent.VK_V);
-		obj.delay(250);
-		obj.keyRelease(KeyEvent.VK_CONTROL);
-		obj.keyRelease(KeyEvent.VK_V);
-		obj.delay(250);
-		obj.keyPress(KeyEvent.VK_ENTER);
-		obj.keyRelease(KeyEvent.VK_ENTER);
+		obj1.keyPress(KeyEvent.VK_CONTROL);
+		obj1.keyPress(KeyEvent.VK_V);
+		obj1.delay(250);
+		obj1.keyRelease(KeyEvent.VK_CONTROL);
+		obj1.keyRelease(KeyEvent.VK_V);
+		obj1.delay(250);
+		obj1.keyPress(KeyEvent.VK_ENTER);
+		obj1.keyRelease(KeyEvent.VK_ENTER);
 
 	}
 	

@@ -50,33 +50,40 @@ public class ManageUserPage {
 	WebElement  searchResult;
 	
 	
-
 	public void clickOnManageusersBtn() {
-		manageUserBtn.click();
+	
+		gu.clickOnWebElement(manageUserBtn);
+
 	}
 	
 	public void clickOnSearchBtn() {
-		serachBtn.click();
+		
+		gu.clickOnWebElement(serachBtn);
 	}
 	
 	public void clickOnSearchBtn1() {
-		searchBtn1.click();
+		
+		gu.clickOnWebElement(searchBtn1);
 	}
 	
 	
 	public void clickOnResetBtn() {
-		resetBtn.click();
+		gu.clickOnWebElement(resetBtn);
+		
 	}
 	
 	public void enteUserName(String user) {
-		uName.sendKeys(user);
+		
+		gu.enterText(user, uName);
 	}
 	public void enterEmailId(String eId) {
-		emailId.sendKeys(eId);
+		
+		gu.enterText(eId, emailId);
 	}
 	
 	public void enterPhoneNumber(String pNum) {
-		phoneNumber.sendKeys(pNum);
+		
+		gu.enterText(pNum, phoneNumber);
 	}
 	
 	public String isDropDownSelected() {

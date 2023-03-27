@@ -37,7 +37,7 @@ public class ManageOfferCodePageTestCase extends BaseClass {
 	}
 
 	@Test
-	public void verifyAdminIsAbleToAddOfferCode() throws AWTException {
+	public void verifyAdminIsAbleToAddOfferCode(){
 
 		gp = new GLoginPage(driver);
 		ap = new AdminPage(driver);

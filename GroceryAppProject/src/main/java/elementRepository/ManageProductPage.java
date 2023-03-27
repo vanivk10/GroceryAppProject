@@ -60,21 +60,25 @@ public class ManageProductPage {
 	WebElement searchResult;
 	
 	public void clickManageProdcttab() {
-		managePrdcttab.click();
+	
+		gu.clickOnWebElement(managePrdcttab);
 	}
 	
 	public void clickNewButton() {
 		
-		newBtn.click();
+	
+		gu.clickOnWebElement(newBtn);
 	}
 	
 	public void clickSearchBtn1() {
 		
-		serachBtn1.click();
+		
+		gu.clickOnWebElement(serachBtn1);
 	}
 	public void clickOnSearchBtn2() {
 	
-		serachBtn2.click();
+		
+		gu.clickOnWebElement(serachBtn2);
 	}
 	
 	public boolean isRadioButtonSelected() {
@@ -101,7 +105,8 @@ public class ManageProductPage {
     
     public void enterProductCode(String code) {
     	
-    	prdctCode.sendKeys(code);
+    	
+    	gu.enterText(code, prdctCode);
     }
     
     public String getSelectedItemFromSearchBtn2() {

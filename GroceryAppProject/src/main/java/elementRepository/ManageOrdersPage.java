@@ -61,16 +61,18 @@ public class ManageOrdersPage {
 		List<WebElement> tableRow;
 		
 		public void enterOrderId(String id) {
-			orderId.sendKeys(id);
+			gu.enterText(id, orderId);
 			
 		}
 		
 		public void clickOnSerachBtn() {
-			blueSearchBtn.click();
+			
+			gu.clickOnWebElement(blueSearchBtn);
 		}
 		
 		public void clickOnSerachBtn1() {
-			redserachBtn.click();
+			
+			gu.clickOnWebElement(redserachBtn);
 		}
 		
 		
@@ -89,8 +91,7 @@ public class ManageOrdersPage {
 			
 		}
      
-		
-			
+					
      }
 		
  

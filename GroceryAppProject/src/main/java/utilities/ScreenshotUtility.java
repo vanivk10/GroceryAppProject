@@ -12,7 +12,7 @@ import org.openqa.selenium.io.FileHandler;
 
 public class ScreenshotUtility {
 	
-	public void captureFailureScreenShot(WebDriver driver, String name) throws IOException {
+	public void captureFailureScreenShot(WebDriver driver, String name) {
 		  //Interface & method for Capture Screenshot 
 		  TakesScreenshot scrShot =(TakesScreenshot)driver;
 		  File screenShot = scrShot.getScreenshotAs(OutputType.FILE);//screenshot will store in temporary path
@@ -28,7 +28,12 @@ public class ScreenshotUtility {
 			 
 		  
 		  File finalDestination=new File(System.getProperty("user.dir")+ "\\OutputScreenshots\\" + name + "_" + timeStamp + ".png");
-		  FileHandler.copy(screenShot, finalDestination);//copy screenshot from temp path to project folder(final destination path
+		  try {
+			FileHandler.copy(screenShot, finalDestination);
+		} catch (IOException e) {
+			
+			System.out.println("Excception" + e);
+		}//copy screenshot from temp path to project folder(final destination path
 		  //used for copying captures file
 	  }
 

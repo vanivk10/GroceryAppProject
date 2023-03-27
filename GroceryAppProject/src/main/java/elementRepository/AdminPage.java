@@ -61,44 +61,53 @@ public class AdminPage {
 	
 	public void clickOnManageOfferCodeBtn() {
 
-		manageOfferCodeBtn.click();
+		
+		gu.clickOnWebElement(manageOfferCodeBtn);
 	}
 	public void clickOnManageLocationBtn() {
 
-		ManageLocationBtn.click();
+		
+		gu.clickOnWebElement(ManageLocationBtn);
 	}
 
 	public void clickOnmanageNewsBtn() {
 
-		manageNewsBtn.click();
+		
+		gu.clickOnWebElement(manageNewsBtn);
 	}
 
 	public void clickOnAdminUser() {
 
-		adminUser.click();
+		
+		gu.clickOnWebElement(adminUser);
 	}
 
 	public void clickmanageDeliveryBoy() {
 
-		manageDeliveryBoyBtn.click();
+		
+		gu.clickOnWebElement(manageDeliveryBoyBtn);
 	}
 
 	public void clickOnmobileSlider() {
 
-		mobileSliderBtn.click();
+
+		gu.clickOnWebElement(mobileSliderBtn);
 	}
 
 	public void clickOnmanageOrders() {
-		manageOrdersBtn.click();
+		gu.clickOnWebElement(manageOrdersBtn);
 
 	}
 
 	public void clickOnAdmin() {
-		adminTab.click();
+	
+		gu.clickOnWebElement(adminTab);
+
 	}
 
 	public String clickOnLogout() {
-		logOutOption.click();
+		
+		gu.clickOnWebElement(logOutOption);
 		return driver.getCurrentUrl();
 
 	}
@@ -108,16 +117,19 @@ public class AdminPage {
 	}
 
 	public String clickOnManageUserBtn() {
-		manageUsersBtn.click();
+		
+		gu.clickOnWebElement(manageUsersBtn);
 		return driver.getCurrentUrl();
 	}
 
 	public void ClickOnManagePagesBtn() {
-		managePagesBtn.click();
+		
+		gu.clickOnWebElement(managePagesBtn);
 
 	}
 
 	public void clickmanageSliderBtn() {
-		manageSliderBtn.click();
+		
+		gu.clickOnWebElement(manageSliderBtn);
 	}
 }

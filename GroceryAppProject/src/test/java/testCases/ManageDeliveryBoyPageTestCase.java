@@ -19,8 +19,7 @@ public class ManageDeliveryBoyPageTestCase extends BaseClass {
 	ManageDeliveryBoyPage deliveryby;
 
 	@Test(retryAnalyzer = RetryUtils.class,groups = "critical")
-	public void verifyingAdminAbleToAddNewDeliveryBoyDetailsWhileClickingNewButtonInManageDeliveryBoyPage()
-			throws IOException {
+	public void verifyingAdminAbleToAddNewDeliveryBoyDetailsWhileClickingNewButtonInManageDeliveryBoyPage(){
 
 		gp = new GLoginPage(driver);
 		ap = new AdminPage(driver);
@@ -30,12 +29,12 @@ public class ManageDeliveryBoyPageTestCase extends BaseClass {
 		gp.clickSignInButton();
 		ap.clickmanageDeliveryBoy();
 		deliveryby.clickOnNewBtn();
-		deliveryby.enterName(Constant.DELIVERYBOYNAME);
+		deliveryby.enterName(faker.name().firstName());
 		deliveryby.enterEmailId(Constant.DELIVERYBOYEID);
-		deliveryby.enterPhoneNumber(Constant.DELIVERYBOYNUMBER);
-		deliveryby.enterAddress(Constant.DELIVERYBOYADDRESS);
-		deliveryby.enterUserName(Constant.DELIVERYBOYUNAME);
-		deliveryby.eneterPassWord(Constant.DELIVERYBOYPASWD);
+		deliveryby.enterPhoneNumber(faker.phoneNumber().cellPhone());
+		deliveryby.enterAddress(faker.address().state());
+		deliveryby.enterUserName(faker.name().username());
+		deliveryby.eneterPassWord(faker.internet().password());
 		deliveryby.clickOnSaveBtn();
 		boolean actualResult = deliveryby.getErrorMessage(Constant.EXPECTEDALERTMESSAGEOFDELIVERYBOYDETAILS);
 		Assert.assertTrue(actualResult, Constant.COMMONERRORMESSAGE);
@@ -43,7 +42,7 @@ public class ManageDeliveryBoyPageTestCase extends BaseClass {
 	}
 
 	@Test
-	public void verifyTheFuctionalityOfTheResetButton() throws IOException {
+	public void verifyTheFuctionalityOfTheResetButton(){
 
 		gp = new GLoginPage(driver);
 		ap = new AdminPage(driver);

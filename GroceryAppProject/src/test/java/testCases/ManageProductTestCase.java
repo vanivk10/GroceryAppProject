@@ -16,7 +16,7 @@ public class ManageProductTestCase extends BaseClass {
 	GLoginPage gp;
 
 	@Test(groups = { "critical" })
-	public void verifyingProductTypeRadioButtonIsSelectedInAddProductSubPage() throws IOException {
+	public void verifyingProductTypeRadioButtonIsSelectedInAddProductSubPage(){
 		gp = new GLoginPage(driver);
 		mp = new ManageProductPage(driver);
 		gp.enterUserName(Constant.LOGINUSERNAME);
@@ -63,7 +63,7 @@ public class ManageProductTestCase extends BaseClass {
 	}
 
 	@Test
-	public void verifyingToolTipContentOfUnderLineInAddManagProductPage() throws IOException {
+	public void verifyingToolTipContentOfUnderLineInAddManagProductPage() {
 
 		// testBasic();
 		gp = new GLoginPage(driver);

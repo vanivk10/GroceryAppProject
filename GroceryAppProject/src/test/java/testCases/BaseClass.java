@@ -16,22 +16,34 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.github.javafaker.Faker;
+
 import constant.Constant;
 import utilities.ScreenshotUtility;
 
 public class BaseClass {
 
-	public static Properties prop;// declaring properties reference variable for using functions in properties
-									// class
-
+	public static Properties prop;     // declaring properties reference variable for using functions in properties
+									  // class
+	FileInputStream ip;
 	ScreenshotUtility ss;
+	Faker faker=new Faker();
 
-	public void testBasic() throws IOException {
+	public void testBasic() {
 
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + Constant.CONFIGPROPERTIESFILEPATH);
-		prop.load(ip);// loading the external file to our project with the help of load fn nd which is
-						// includes in properties class
+		//FileInputStream ip;
+		try {
+			ip = new FileInputStream(System.getProperty("user.dir") + Constant.CONFIGPROPERTIESFILEPATH);
+		} catch (FileNotFoundException e) {
+			System.out.println("Excception" + e);
+		}
+		try {
+			prop.load(ip);                     // loading the external file to our project with the help of load fn nd which is
+			                                  // includes in properties class
+		} catch (IOException e) {
+			System.out.println("Excception" + e);
+		}
 	}
 
 	WebDriver driver;
@@ -42,8 +54,8 @@ public class BaseClass {
 
 		if (browserName.equals(Constant.CHROMEBROWSER)) {
 
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\admin\\Downloads\\chromedriver_win32\\chromedriver.exe\\");
+			//System.setProperty("webdriver.chrome.driver",
+			//		"C:\\Users\\admin\\Downloads\\chromedriver_win32\\chromedriver.exe\\");// in selenium4 its not required 
 			System.setProperty("webdriver.http.factory", "jdk-http-client");
 			driver = new ChromeDriver();
 			ChromeOptions ops = new ChromeOptions();

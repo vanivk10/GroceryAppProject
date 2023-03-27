@@ -59,29 +59,32 @@ public class ManageLocationPage {
 	}
 
 	public void enterLocation(String ln) {
-		locn.sendKeys(ln);
+	
+		gu.enterText(ln, locn);
 		
 	}
 	
 	public void enterDeliveryCharg(String charge) {
-		deliveryCharg.sendKeys(charge);
+		
+		gu.enterText(charge, deliveryCharg);
 		
 	}
 	public void clickOnSaveButton() {
 
-		saveBtn.click();
+		gu.clickOnWebElement(saveBtn);
 
 	}
 
 	public void clickOncancelButton() {
 
-		cancelBtn.click();
+		gu.clickOnWebElement(cancelBtn);
 
 	}
 
 	public void clickOnNewButton() {
 
-		newBtn.click();
+		gu.clickOnWebElement(newBtn);
+
 
 	}
 

@@ -60,11 +60,14 @@ public class ManageSliderPage  {
 		}
 		
 		public void enterlinkText(String linkTxt) {
-			link.sendKeys(linkTxt);	
+			
+			gu.enterText(linkTxt, link);
 		}
 		
 		public void clickNewBtn() {
-			newBtn.click();
+			
+			gu.clickOnWebElement(newBtn);
+
 			
 		}
 		public String getTitle() {
@@ -72,14 +75,17 @@ public class ManageSliderPage  {
 				
 		}
 		public void clickOnSaveeBtn() {
-			saveBtn.click();
+			
+			gu.clickOnWebElement(saveBtn);
 		}
 		public void clickOncancelBtn() {
-			cancellBtn.click();
+			
+			gu.clickOnWebElement(cancellBtn);
 		}
 		
 		public void clickOnDeleteBtn() {
-			deleteBtn.click();
+			
+			gu.clickOnWebElement(deleteBtn);
 		}
 		public String Alert() {
 			
@@ -93,7 +99,7 @@ public class ManageSliderPage  {
 		}
 		
 		
-		public void FileUpload() throws AWTException {
+		public void FileUpload(){
 			gu.fileUploads(driver,chooseFile, System.getProperty("user.dir")+"\\src\\main\\resources");
 		}
 		

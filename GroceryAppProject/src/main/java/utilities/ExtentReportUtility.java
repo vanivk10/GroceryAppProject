@@ -33,7 +33,7 @@ public class ExtentReportUtility implements ITestListener {
 	}
 
 	//create file
-	sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"//ExtentReport//"+"ExtentReport_" + strDate + ".html");
+	sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"//ExtentReport//"+"ExtentReport"+".html");
 	reports = new ExtentReports();
 	reports.attachReporter(sparkReporter);
 

@@ -5,9 +5,9 @@ import org.testng.asserts.Assertion;
 import constant.Constant;
 import elementRepository.GLoginPage;
 import utilities.DataProviderUtility;
+import utilities.ExcelReadUtility;
 import utilities.RetryUtils;
 
-import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,25 +16,30 @@ import org.testng.Assert;
 
 public class GLoginPageTestCase extends BaseClass {// inheritance
 
+	ExcelReadUtility er = new ExcelReadUtility();
 	GLoginPage gp;
 
 	@Test(dataProvider = "dataProvider", dataProviderClass = DataProviderUtility.class, groups = "critical")
-	public void verifyLoginwithInvalidCredentialss(String user, String pass) throws IOException {
+	public void verifyLoginwithInvalidCredentialss(String user, String pass){
 
 		gp = new GLoginPage(driver);
 		gp.enterUserName(user);
 		gp.eneterPassWord(pass);
 		gp.clickSignInButton();
 		boolean actualResult = gp.getErrorMessage(Constant.EXPECTEDINVALIDLOGINALERT);
+		//boolean actualResult = gp.getErrorMessage(er.readStringData(prop.getProperty("DataProviderExcel"),prop.getProperty("ExpectedResultSheet"),5,1));
 		Assert.assertTrue(actualResult, Constant.COMMONERRORMESSAGE);
+		//Assert.assertTrue(actualResult,er.readStringData(prop.getProperty("DataProviderExcel"),prop.getProperty("ExpectedResultSheet"),20,1) );
+		
+		
 
 	}
 
 	@Test(retryAnalyzer = RetryUtils.class,groups = "critical")
-	public void verifyLoginwithInvalidCredentials() throws IOException {
+	public void verifyLoginwithInvalidCredentials() {
 
 		gp = new GLoginPage(driver);
-		gp.enterUserName(Constant.INVALIDUSERNAME);
+		gp.enterUserName(faker.name().username());
 		gp.eneterPassWord(Constant.LOGINPASSWORD);
 		gp.clickSignInButton();
 		boolean actualResult = gp.getErrorMessage(Constant.EXPECTEDINVALIDLOGINALERT);
